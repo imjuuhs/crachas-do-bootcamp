@@ -1,0 +1,33 @@
+.cracha-card {
+    border: 1px solid #ddd;
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.cracha-card.error {
+    background: linear-gradient(135deg, #ff6b6b 0%, #ee5a52 100%);
+}
+
+.cracha-card h3 {
+    margin: 0 0 15px 0;
+    font-size: 24px;
+}
+
+.cracha-info p {
+    margin: 5px 0;
+    font-size: 18px;
+}
+
+.cracha-id {
+    margin-top: 15px;
+    opacity: 0.8;
+}
+
+.cracha-id small {
+    font-size: 12px;
+    word-break: break-all;
+}
