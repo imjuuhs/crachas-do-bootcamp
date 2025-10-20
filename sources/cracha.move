@@ -1,28 +1,31 @@
 module cracha::cracha {
-
     use std::string::String;
+    use sui::object;
+    use sui::tx_context;
+    use sui::transfer;
 
-    /// Objeto que representa o crachá de um participante do bootcamp
+    /// Estrutura que representa o crachá de um participante do bootcamp
     public struct Cracha has key, store {
         id: UID,
         nome: String,
-        edicao_bootcamp: u64,
-    }
-
-    /// Função que é chamada uma única vez para publicar o módulo
-    fun init(_ctx: &mut TxContext) {
-        // Inicialização do módulo (se necessário)
+        edicao_bootcamp: String,
+        image_url: String,
     }
 
     /// Função que cria e emite um crachá para o participante
-    entry fun emitir(nome: String, ctx: &mut TxContext) {
+    public entry fun emitir(
+        nome: String,
+        edicao_bootcamp: String,
+        image_url: String,
+        ctx: &mut TxContext
+    ) {
         let cracha = Cracha {
             id: object::new(ctx),
             nome,
-            edicao_bootcamp: 2,
+            edicao_bootcamp,
+            image_url,
         };
 
-        // Transfere o crachá para o remetente da transação
         transfer::transfer(cracha, tx_context::sender(ctx));
     }
 
@@ -32,7 +35,7 @@ module cracha::cracha {
     }
 
     /// Função para obter a edição do bootcamp
-    public fun get_edicao_bootcamp(cracha: &Cracha): u64 {
+    public fun get_edicao_bootcamp(cracha: &Cracha): String {
         cracha.edicao_bootcamp
     }
 

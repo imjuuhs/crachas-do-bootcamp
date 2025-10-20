@@ -11,20 +11,42 @@
     color: #333;
 }
 
-.input-group {
-    margin-bottom: 15px;
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Espaço entre os inputs */
+    margin-bottom: 20px;
 }
 
-.name-input {
-    width: 300px;
+.form-input {
     padding: 12px;
     font-size: 16px;
     border: 2px solid #ddd;
     border-radius: 8px;
-    margin-right: 10px;
+}
+
+/* Estilos para o input de arquivo personalizado */
+.form-input-label {
+    padding: 12px;
+    font-size: 16px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    background-color: white;
+    cursor: pointer;
+    display: block;
+    color: #666;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.form-input-hidden {
+    /* Esconde o input de arquivo padrão */
+    display: none;
 }
 
 .mint-button {
+    width: 100%;
     padding: 12px 24px;
     font-size: 16px;
     background-color: #667eea;

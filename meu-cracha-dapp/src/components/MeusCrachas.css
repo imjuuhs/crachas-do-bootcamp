@@ -1,0 +1,75 @@
+/* src/components/MeusCrachas.css */
+.meus-crachas-container {
+    width: 100%;
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 1.5rem;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+}
+
+.meus-crachas-container h3 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 1.5rem;
+}
+
+.crachas-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 1.5rem;
+}
+
+.cracha-card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.cracha-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.cracha-image {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    display: block;
+}
+
+.cracha-info {
+    padding: 1rem;
+}
+
+.cracha-info h4 {
+    margin: 0 0 0.5rem 0;
+    font-size: 1rem;
+    color: #333;
+}
+
+.cracha-info p {
+    margin: 0;
+    font-size: 0.875rem;
+    color: #666;
+}
+
+.warning-text,
+.error-text {
+    text-align: center;
+    padding: 1rem;
+    border-radius: 8px;
+}
+
+.warning-text {
+    background-color: #fffbe6;
+    color: #8a6d3b;
+}
+
+.error-text {
+    background-color: #f2dede;
+    color: #a94442;
+}
